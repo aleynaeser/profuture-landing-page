@@ -19,7 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "@types/*": ["./src/common/types/*"],
+      "@styles/*": ["./src/common/styles/*"],
+      "@shared/*": ["./src/common/components/shared/*"],
+      "@components/*": ["./src/common/components/*"],
+      "@hooks/*": ["./src/common/hooks/*"]
     }
   },
   "include": [
