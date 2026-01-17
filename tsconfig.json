@@ -20,11 +20,13 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@lib/*": ["./src/common/lib/*"],
+      "@icons/*": ["./src/assets/icons/*"],
       "@types/*": ["./src/common/types/*"],
       "@styles/*": ["./src/common/styles/*"],
-      "@shared/*": ["./src/common/components/shared/*"],
+      "@constants/*": ["./src/common/constants/*"],
       "@components/*": ["./src/common/components/*"],
-      "@hooks/*": ["./src/common/hooks/*"]
+      "@shared/*": ["./src/common/components/shared/*"],
     }
   },
   "include": [

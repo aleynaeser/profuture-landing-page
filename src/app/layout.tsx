@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { journalData } from '@constants/journal-data';
 import * as motion from 'motion/react-client';
+import Header from '@shared/Header';
 
 import '@styles/globals.css';
 
@@ -11,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Profuture',
-  description: '2022 yılında yayın hayatına başlayan teknoloji dergisi Profuture',
+  title: journalData.title,
+  description: journalData.description,
 };
 
 export default function RootLayout({
@@ -27,7 +29,6 @@ export default function RootLayout({
         <link rel='apple-touch-icon' sizes='180x180' href='/favicons/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='32x32' href='/favicons/favicon-32x32.png' />
         <link rel='icon' type='image/png' sizes='16x16' href='/favicons/favicon-16x16.png' />
-        <link rel='manifest' href='/manifest.ts' />
         <link rel='mask-icon' href='/favicons/safari-pinned-tab.svg' color='#f9f9f9' />
         <link rel='shortcut icon' href='/favicons/favicon.ico' />
         <meta name='msapplication-TileColor' content='#f9f9f9' />
@@ -44,6 +45,8 @@ export default function RootLayout({
         }}
         className={`${inter.variable} antialiased`}
       >
+        <Header />
+
         {children}
       </motion.body>
     </html>

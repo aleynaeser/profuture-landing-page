@@ -2,11 +2,12 @@
 
 :root {
   --background: #fbfbfd;
-  --foreground: #161f3c;
+  --foreground: #ffffff;
 
   --primary: #273d89;
   --primary-light: #676a73;
   --primary-dark: #081542;
+  --primary-darker: #161f3c;
 
   --secondary: #c6ecff;
   --secondary-light: #00c3d0;
@@ -26,8 +27,9 @@
   --color-foreground: var(--foreground);
 
   --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-darker: var(--primary-darker);
 
   --color-secondary: var(--secondary);
   --color-secondary-light: var(--secondary-light);
