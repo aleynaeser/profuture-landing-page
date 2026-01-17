@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 interface IconButtonProps {
-  text?: string;
+  content?: string;
   href?: string;
   className?: string;
   variant?: 'solid' | 'outline';
@@ -11,7 +11,7 @@ interface IconButtonProps {
   Icon?: (props: TIconProps) => ReactNode;
 }
 
-export const IconButton = ({ className, variant = 'solid', text, href = '/', Icon, onClick }: IconButtonProps) => {
+export const IconButton = ({ className, variant = 'solid', content, href = '/', Icon, onClick }: IconButtonProps) => {
   const withHref = !onClick;
   const isOutlined = variant === 'outline';
 
@@ -22,11 +22,10 @@ export const IconButton = ({ className, variant = 'solid', text, href = '/', Ico
   };
 
   const commonClasses = cn(
-    'group relative flex cursor-pointer items-center justify-center cursor-pointer overflow-hidden rounded-full font-medium  ',
+    'group relative flex cursor-pointer items-center justify-center  overflow-hidden rounded-full font-medium',
     isOutlined
-      ? 'border-stroke h-[55px] w-[55px] border bg-transparent '
-      : 'h-[55px] w-[55px] min-[1300px]:min-w-[170px] text-nowrap px-4 text-white text-sm 2xl:text-base',
-
+      ? 'border-stroke h-13.75 w-13.75 border bg-transparent '
+      : 'h-13.75 w-13.75 min-[1300px]:min-w-37.5 text-nowrap px-4 text-white text-sm 2xl:text-base',
     className,
   );
 
@@ -41,7 +40,7 @@ export const IconButton = ({ className, variant = 'solid', text, href = '/', Ico
 
       <div className='relative z-10 flex items-center gap-3'>
         {Icon && <Icon />}
-        {text && <span className='hidden min-[1300px]:flex'>{text}</span>}
+        {content && <span className='hidden min-[1300px]:flex'>{content}</span>}
       </div>
     </>
   );

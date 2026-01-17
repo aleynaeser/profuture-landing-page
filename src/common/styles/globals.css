@@ -11,13 +11,16 @@
 
   --secondary: #c6ecff;
   --secondary-light: #00c3d0;
+  --secondary-lighter: #f6f8ff;
   --secondary-dark: #2a2c31;
 
   --neutral: #a8b95e;
   --neutral-light: #fbf6e3;
+  --neutral-lighter: #f0f0f3;
 
   --accent: #db0d15;
-  --accent-light: #de8536;
+  --accent-light: #ffd9da;
+  --accent-dark: #de8536;
 
   --stroke: #acb1c6;
 }
@@ -33,10 +36,12 @@
 
   --color-secondary: var(--secondary);
   --color-secondary-light: var(--secondary-light);
+  --color-secondary-lighter: var(--secondary-lighter);
   --color-secondary-dark: var(--secondary-dark);
 
   --color-neutral: var(--neutral);
   --color-neutral-light: var(--neutral-light);
+  --color-neutral-lighter: var(--neutral-lighter);
 
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);

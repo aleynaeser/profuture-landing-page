@@ -15,13 +15,16 @@ export declare global {
 
   interface IContact {
     mail: TContactItem;
+    editorsMail: TContactItem;
+    address: TContactItem;
   }
 
   type TContactItem = {
     Icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactNode;
-    title: string;
     value: string;
     href: string;
+    title?: string;
+    name?: string;
   };
 
   interface IMenu {
@@ -32,6 +35,17 @@ export declare global {
     label: string;
     href: string;
   };
+
+  interface IArticle {
+    id: string;
+    title: string;
+    category: string;
+    type: string;
+    image: string;
+    pages?: string;
+    authors?: string[];
+    content: string;
+  }
 
   declare module '*.svg' {
     import React from 'react';

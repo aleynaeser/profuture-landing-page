@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { journalData } from '@constants/journal-data';
-import * as motion from 'motion/react-client';
 import Header from '@shared/Header';
+import Footer from '@shared/Footer';
+import * as motion from 'motion/react-client';
 
 import '@styles/globals.css';
 
@@ -43,11 +44,13 @@ export default function RootLayout({
           duration: 0.5,
           scale: { type: 'spring', visualDuration: 0.5, bounce: 0.5 },
         }}
-        className={`${inter.variable} antialiased`}
+        className={`${inter.variable} flex flex-col antialiased h-screen`}
       >
         <Header />
 
         {children}
+
+        <Footer />
       </motion.body>
     </html>
   );

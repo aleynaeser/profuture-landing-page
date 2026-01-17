@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import HomeIcon from '@icons/home.svg';
-import AuthorIcon from '@icons/author.svg';
+import ContactIcon from '@icons/contact.svg';
 import SearchIcon from '@icons/search.svg';
 import PublicIcon from '@icons/public.svg';
 import { menuData } from '@constants/menu-data';
@@ -23,12 +23,12 @@ export default function Header() {
   return (
     <motion.header
       {...itemUpMotion}
-      className='bg-foreground before:bg-primary-darker relative z-10 flex h-full w-full flex-col before:absolute before:top-0 before:left-0 before:-z-1 before:h-11 before:w-full lg:h-33.75'
+      className='bg-foreground before:bg-primary-darker relative z-40 flex h-full w-full flex-col before:absolute before:top-0 before:left-0 before:-z-1 before:h-11 before:w-full lg:h-33.75'
     >
       <div className='relative flex w-full overflow-hidden'>
         <motion.div
           {...itemLeftMotion}
-          className='outline-foreground bg-primary relative h-28 min-w-30 rounded-tr-[100px] p-4 outline-18 lg:h-33.75 min-[1300px]:w-full min-[1300px]:max-w-72 min-[1300px]:pr-12 min-[1300px]:pl-8 2xl:max-w-96 2xl:min-w-44'
+          className='outline-foreground bg-primary relative h-28 min-w-30 rounded-tr-[100px] p-4 outline-18 min-[1300px]:w-full min-[1300px]:max-w-72 min-[1300px]:pr-12 min-[1300px]:pl-8 lg:h-33.75 2xl:max-w-96 2xl:min-w-44'
         >
           <Link href='/' className='relative flex h-full w-full items-center justify-center'>
             <Image
@@ -52,7 +52,7 @@ export default function Header() {
         </motion.div>
 
         <div className='flex w-full flex-col items-end px-4 min-[1300px]:px-0 min-[1310px]:items-start'>
-          <div className='flex min-h-11 w-full items-center justify-end gap-2 min-[1300px]:pr-12 lg:relative lg:justify-between lg:gap-4 lg:pl-5'>
+          <div className='flex min-h-11 w-full items-center justify-end gap-2 min-[1300px]:pr-12 min-[1300px]:pl-5 lg:justify-between lg:gap-4'>
             <Link href={href} className='flex items-center gap-3.5 text-sm hover:underline lg:flex 2xl:text-base'>
               <Icon />
               <span>{value}</span>
@@ -71,7 +71,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className='hidden h-[calc(100%-44px)] w-full items-center justify-between gap-6 min-[1300px]:pr-12 lg:flex lg:pl-5'>
+          <div className='hidden h-[calc(100%-44px)] w-full items-center justify-between gap-6 min-[1300px]:pr-12 min-[1300px]:pl-5 lg:flex'>
             <motion.a
               href='/'
               whileHover={{ scale: 1.07 }}
@@ -95,14 +95,25 @@ export default function Header() {
               </nav>
 
               <div className='flex items-center justify-center gap-2'>
-                <IconButton text='Dergi Kurulu' Icon={PublicIcon} className='bg-primary' />
-                <IconButton text='Yazar Rehberi' Icon={AuthorIcon} className='bg-neutral' />
+                <IconButton content='Dergi Kurulu' Icon={PublicIcon} className='bg-primary' />
+                <IconButton content='Yazar Rehberi' Icon={ContactIcon} className='bg-neutral' />
                 <IconButton variant='outline' Icon={SearchIcon} />
               </div>
             </div>
           </div>
 
-          <Menu />
+          <div className='flex h-full w-full items-center justify-between lg:hidden'>
+            <motion.a
+              href='/'
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.99 }}
+              transition={{ duration: 0.2, stiffness: 130, damping: 10, ease: 'easeInOut' }}
+            >
+              <HomeIcon className='h-6 w-6' />
+            </motion.a>
+
+            <Menu />
+          </div>
         </div>
       </div>
 
