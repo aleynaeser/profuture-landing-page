@@ -64,6 +64,9 @@ export default function Journals() {
             0: {
               slidesPerView: 1,
             },
+            540: {
+              slidesPerView: 1.5,
+            },
             768: {
               slidesPerView: 2,
             },
