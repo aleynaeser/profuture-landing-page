@@ -44,7 +44,7 @@ export default function CookieConsent() {
                 <CookieIcon />
               </div>
 
-              <p className='text-secondary-dark text-xs lg:text-sm leading-relaxed'>
+              <p className='text-secondary-dark text-xs leading-relaxed lg:text-sm'>
                 We use cookies to ensure that we give you the best experience on our website.{' '}
                 <Link href='#' className='text-primary hover:underline'>
                   Read cookies policies.
@@ -55,14 +55,14 @@ export default function CookieConsent() {
             <div className='flex w-fit items-center gap-3'>
               <button
                 onClick={handleDecline}
-                className='bg-primary/10 hover:bg-primary/15 text-secondary-dark flex-1 rounded-full px-4 py-2 text-sm font-semibold transition-colors'
+                className='bg-primary/10 hover:bg-primary/15 text-secondary-dark flex-1 cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transition-colors'
               >
                 Decline
               </button>
 
               <button
                 onClick={handleAccept}
-                className='bg-primary hover:bg-primary-dark flex-1 rounded-full px-4 py-2 text-sm font-semibold transition-colors'
+                className='bg-primary hover:bg-primary-dark flex-1 cursor-pointer rounded-full px-4 py-2 text-sm font-semibold transition-colors'
               >
                 Allow
               </button>
