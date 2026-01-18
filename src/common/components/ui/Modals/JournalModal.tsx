@@ -1,16 +1,12 @@
-import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
-
-import CloseIcon from '@icons/close.svg';
-import PDFIcon from '@icons/pdf.svg';
-
+import { IconButton } from '../Buttons/IconButton';
+import { AnimatePresence, motion } from 'framer-motion';
+import Badge from '../Badge';
+import Image from 'next/image';
 import BookIcon from '@icons/book.svg';
+import CloseIcon from '@icons/close.svg';
 import CountIcon from '@icons/count.svg';
-
 import CalendarIcon from '@icons/calendar.svg';
-import Badge from './Badge';
-import { IconButton } from './IconButton';
 
 interface IJournalModalProps {
   journal: IJournal | null;
@@ -52,7 +48,7 @@ export default function JournalModal({ journal, onClose }: IJournalModalProps) {
                 width={180}
                 height={180}
                 priority
-                className='border-stroke rounded-2xl mx-auto h-auto border object-cover'
+                className='border-stroke mx-auto h-auto rounded-2xl border object-cover'
               />
             </div>
 

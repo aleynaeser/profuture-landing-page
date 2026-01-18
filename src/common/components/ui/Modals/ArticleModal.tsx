@@ -1,7 +1,7 @@
-import Badge from './Badge';
+import Badge from '../Badge';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { IconButton } from '../ui/IconButton';
+import { IconButton } from '../Buttons/IconButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import CloseIcon from '@icons/close.svg';
 import AuthorIcon from '@icons/author.svg';

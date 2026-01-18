@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import InboxIcon from '@icons/inbox.svg';
-import { IconButton } from '../ui/IconButton';
+import { IconButton } from '../ui/Buttons/IconButton';
 import { contactData } from '@constants/contact-data';
 import { itemLeftMotion, itemUpMotion } from '@/common/lib/motions';
 

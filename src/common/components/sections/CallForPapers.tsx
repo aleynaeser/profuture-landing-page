@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'motion/react';
 import CallIcon from '@icons/call.svg';
 import { itemUpMotion } from '@lib/motions';
-import NavigateButton from '@components/ui/NavigateButton';
+import NavigateButton from '@/common/components/ui/Buttons/NavigateButton';
 
 export default function CallForPapers() {
   return (

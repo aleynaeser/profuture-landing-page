@@ -11,7 +11,7 @@ import CalendarIcon from '@icons/calendar.svg';
 import { motion } from 'framer-motion';
 import { itemMotion } from '@lib/motions';
 import { handleDownload } from '@lib/utils';
-import { IconButton } from '@components/ui/IconButton';
+import { IconButton } from '@/common/components/ui/Buttons/IconButton';
 import Badge from '../../ui/Badge';
 import { isNull } from 'util';
 
@@ -30,7 +30,7 @@ export default function JournalItem({ item, onView }: IJournalItemProps) {
         <Image src={item.cover} alt={item.title} fill sizes='240px' />
 
         {item.isNew && (
-          <div className='bg-accent absolute top-1/2 -left-11 z-20 h-10 w-fit -translate-y-1/2 -rotate-90 transform rounded-br-3xl rounded-bl-3xl lg:rounded-br-4xl lg:rounded-bl-4xl px-4 py-2 text-sm font-bold lg:-left-12 lg:h-12 lg:px-4.5 lg:py-2 lg:text-lg'>
+          <div className='bg-accent absolute top-1/2 -left-11 z-20 h-10 w-fit -translate-y-1/2 -rotate-90 transform rounded-br-3xl rounded-bl-3xl px-4 py-2 text-sm font-bold lg:-left-12 lg:h-12 lg:rounded-br-4xl lg:rounded-bl-4xl lg:px-4.5 lg:py-2 lg:text-lg'>
             Son Sayı
           </div>
         )}

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { IconButton } from '../ui/IconButton';
+import { IconButton } from '../ui/Buttons/IconButton';
 import { menuData } from '@constants/menu-data';
 import { AnimatePresence, motion } from 'motion/react';
 import MenuIcon from '@icons/menu.svg';

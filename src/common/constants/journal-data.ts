@@ -24,4 +24,12 @@ export const journalData: IJournal[] = [
     date: 'Temmuz 2022',
     isNew: true,
   },
+  {
+    id: 'profuture-04',
+    title: 'Teknoloji ve Dijital Dergisi',
+    cover: '/images/journal-cover.png',
+    volume: 1,
+    issue: 1,
+    date: 'Temmuz 2022',
+  },
 ];

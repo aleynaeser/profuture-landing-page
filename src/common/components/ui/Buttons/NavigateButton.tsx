@@ -1,8 +1,8 @@
 'use client';
 
 import { cn } from '@lib/utils';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import RightIcon from '@icons/right.svg';
 
 interface INavigateButtonProps {

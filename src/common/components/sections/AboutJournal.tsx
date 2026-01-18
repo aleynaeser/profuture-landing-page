@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { floatingMotion, itemLeftMotion } from '@lib/motions';
-import NavigateButton from '@components/ui/NavigateButton';
+import NavigateButton from '@/common/components/ui/Buttons/NavigateButton';
 
 export default function AboutJournal() {
   return (

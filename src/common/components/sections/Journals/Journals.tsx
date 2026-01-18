@@ -8,9 +8,9 @@ import type { Swiper as SwiperType } from 'swiper';
 import { journalData } from '@constants/journal-data';
 import { itemListMotion, itemLeftMotion } from '@lib/motions';
 import JournalItem from './JournalItem';
-import SlideButton from '@components/ui/SlideButton';
-import JournalModal from '@components/ui/JournalModal';
-import NavigateButton from '@components/ui/NavigateButton';
+import SlideButton from '@/common/components/ui/Buttons/SlideButton';
+import JournalModal from '@/common/components/ui/Modals/JournalModal';
+import NavigateButton from '@/common/components/ui/Buttons/NavigateButton';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -41,16 +41,8 @@ export default function Journals() {
           </motion.div>
 
           <div className='hidden gap-2.5 pb-2 lg:flex'>
-            <SlideButton
-              direction='prev'
-              onClick={() => swiperInstance?.slidePrev()}
-              disabled={slideConfig.isBeginning}
-            />
-            <SlideButton
-              direction='next'
-              onClick={() => swiperInstance?.slideNext()}
-              disabled={slideConfig.isEnd}
-            />
+            <SlideButton direction='prev' onClick={() => swiperInstance?.slidePrev()} disabled={slideConfig.isBeginning} />
+            <SlideButton direction='next' onClick={() => swiperInstance?.slideNext()} disabled={slideConfig.isEnd} />
           </div>
         </div>
 
@@ -58,16 +50,8 @@ export default function Journals() {
       </div>
 
       <div className='flex items-center justify-between gap-2.5 pb-6 lg:hidden'>
-        <SlideButton
-          direction='prev'
-          onClick={() => swiperInstance?.slidePrev()}
-          disabled={slideConfig.isBeginning}
-        />
-        <SlideButton
-          direction='next'
-          onClick={() => swiperInstance?.slideNext()}
-          disabled={slideConfig.isEnd}
-        />
+        <SlideButton direction='prev' onClick={() => swiperInstance?.slidePrev()} disabled={slideConfig.isBeginning} />
+        <SlideButton direction='next' onClick={() => swiperInstance?.slideNext()} disabled={slideConfig.isEnd} />
       </div>
 
       <motion.div {...itemListMotion} className='flex flex-wrap gap-5'>

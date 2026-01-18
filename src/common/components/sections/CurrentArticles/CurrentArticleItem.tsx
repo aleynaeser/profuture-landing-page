@@ -8,7 +8,7 @@ import DownloadIcon from '@icons/download.svg';
 import { motion } from 'framer-motion';
 import { itemMotion } from '@lib/motions';
 import { handleDownload } from '@lib/utils';
-import { IconButton } from '@components/ui/IconButton';
+import { IconButton } from '@/common/components/ui/Buttons/IconButton';
 
 interface ICurrentArticleItemProps {
   article: IArticle;

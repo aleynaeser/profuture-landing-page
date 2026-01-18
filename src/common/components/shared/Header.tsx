@@ -11,7 +11,7 @@ import PublicIcon from '@icons/public.svg';
 import { menuData } from '@constants/menu-data';
 import { contactData } from '@constants/contact-data';
 import { profutureData } from '@constants/profuture-data';
-import { IconButton } from '@components/ui/IconButton';
+import { IconButton } from '@/common/components/ui/Buttons/IconButton';
 import { itemLeftMotion, itemUpMotion } from '@lib/motions';
 
 export default function Header() {
@@ -97,7 +97,7 @@ export default function Header() {
               <div className='flex items-center justify-center gap-2'>
                 <IconButton content='Dergi Kurulu' Icon={PublicIcon} className='bg-primary' />
                 <IconButton content='Yazar Rehberi' Icon={ContactIcon} className='bg-accent-lighter' />
-                <IconButton variant='outline' Icon={SearchIcon}  />
+                <IconButton variant='outline' Icon={SearchIcon} />
               </div>
             </div>
           </div>
@@ -128,7 +128,6 @@ export default function Header() {
           Periyot: <span className='font-bold'>{periodicity}</span>
         </span>
       </div>
-  
     </motion.header>
   );
 }

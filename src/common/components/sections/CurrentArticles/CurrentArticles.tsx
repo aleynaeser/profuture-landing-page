@@ -4,14 +4,14 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { handleDownload } from '@lib/utils';
 import { itemLeftMotion, itemListMotion, itemUpMotion } from '@/common/lib/motions';
-import { IconButton } from '@components/ui/IconButton';
+import { IconButton } from '@/common/components/ui/Buttons/IconButton';
 import { useCallback, useMemo, useState } from 'react';
 import CurrentArticleItem from './CurrentArticleItem';
 import EyeIcon from '@icons/eye.svg';
 import DownloadIcon from '@icons/download.svg';
 import articlesData from '@constants/article-data';
-import ArticleModal from '@components/ui/ArticleModal';
-import NavigateButton from '@components/ui/NavigateButton';
+import ArticleModal from '@/common/components/ui/Modals/ArticleModal';
+import NavigateButton from '@/common/components/ui/Buttons/NavigateButton';
 
 export default function CurrentArticles() {
   const [selectedArticle, setSelectedArticle] = useState<IArticle | null>(null);
@@ -41,7 +41,7 @@ export default function CurrentArticles() {
               className='relative z-10 mx-auto flex h-auto w-50 scale-100 object-cover transition-all duration-150 ease-in-out hover:scale-[1.01] lg:mx-0 lg:w-full'
             />
 
-            <div className='bg-accent absolute top-1/2 -left-9.5 z-20 h-12 w-fit -translate-y-1/2 -rotate-90 transform rounded-br-3xl rounded-bl-3xl lg:rounded-br-4xl lg:rounded-bl-4xl px-5 py-2 text-lg font-bold lg:-left-11 lg:h-17 lg:px-6 lg:py-4 lg:text-2xl'>
+            <div className='bg-accent absolute top-1/2 -left-9.5 z-20 h-12 w-fit -translate-y-1/2 -rotate-90 transform rounded-br-3xl rounded-bl-3xl px-5 py-2 text-lg font-bold lg:-left-11 lg:h-17 lg:rounded-br-4xl lg:rounded-bl-4xl lg:px-6 lg:py-4 lg:text-2xl'>
               Son Sayı
             </div>
           </div>

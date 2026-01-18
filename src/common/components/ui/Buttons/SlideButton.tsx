@@ -1,17 +1,17 @@
 'use client';
 
-import { motion } from 'motion/react';
 import { cn } from '@lib/utils';
+import { motion } from 'motion/react';
 import RightIcon from '@icons/right.svg';
 
-interface SlideButtonProps {
+interface ISlideButtonProps {
   direction: 'prev' | 'next';
   onClick: () => void;
   disabled?: boolean;
   className?: string;
 }
 
-export default function SlideButton({ direction, onClick, disabled, className }: SlideButtonProps) {
+export default function SlideButton({ direction, onClick, disabled, className }: ISlideButtonProps) {
   return (
     <motion.button
       type='button'
@@ -21,17 +21,12 @@ export default function SlideButton({ direction, onClick, disabled, className }:
       whileTap={!disabled ? { scale: 0.99 } : undefined}
       transition={{ duration: 0.2, stiffness: 130, damping: 10, ease: 'easeInOut' }}
       className={cn(
-        'flex h-10 w-10 items-center justify-center rounded-2xl transition-colors',
+        'flex h-10 w-10 items-center justify-center cursor-pointer rounded-2xl transition-colors',
         disabled ? 'bg-neutral-light cursor-default' : 'bg-neutral cursor-pointer',
-        className
+        className,
       )}
     >
-      <RightIcon
-        className={cn(
-          direction === 'prev' && 'rotate-180',
-          disabled ? 'text-stroke' : 'text-primary'
-        )}
-      />
+      <RightIcon className={cn(direction === 'prev' && 'rotate-180', disabled ? 'text-stroke' : 'text-primary')} />
     </motion.button>
   );
 }

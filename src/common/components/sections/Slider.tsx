@@ -5,7 +5,7 @@ import BookIcon from '@icons/book.svg';
 import CountIcon from '@icons/count.svg';
 import { itemLeftMotion } from '@lib/motions';
 import CalendarIcon from '@icons/calendar.svg';
-import NavigateButton from '../ui/NavigateButton';
+import NavigateButton from '../ui/Buttons/NavigateButton';
 
 export default function Slider() {
   return (
