@@ -30,7 +30,7 @@ export default function CallForPapers() {
             </h2>
           </div>
 
-          <p className='text-secondary-dark text-sm/relaxed 2xl:text-lg/relaxed'>
+          <p className='text-secondary-dark text-sm/relaxed 2xl:text-lg/relaxed line-clamp-6'>
             Bu dosya kapsamında; ulusal ölçekte dijital veri yönetimi, kamu ve özel sektörde teknoloji altyapıları, yapay
             zeka uygulamaları, büyük veri analitiği, siber güvenlik, akıllı sistemler ve dijital dönüşüm odaklı özgün, güncel
             ve disiplinlerarası akademik çalışmalar değerlendirilecektir.

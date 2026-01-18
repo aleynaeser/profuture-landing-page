@@ -23,7 +23,7 @@ export default function Menu() {
   }, [isOpen]);
 
   return (
-    <div className='relative z-40 flex h-full items-center justify-center lg:hidden lg:px-4 lg:pr-12'>
+    <div className='relative z-50 flex h-full items-center justify-center lg:hidden lg:px-4 lg:pr-12'>
       <IconButton variant='outline' onClick={() => setIsOpen(!isOpen)} Icon={MenuIcon} className='bg-primary' />
 
       <AnimatePresence>

@@ -26,11 +26,8 @@ export default function Header() {
       className='bg-foreground before:bg-primary-darker sticky top-0 right-0 z-40 flex h-full w-full flex-col before:absolute before:top-0 before:left-0 before:-z-1 before:h-11 before:w-full lg:h-33.75'
     >
       <div className='relative flex w-full overflow-hidden'>
-        <motion.div
-          {...itemLeftMotion}
-          className='outline-foreground bg-primary relative h-28 min-w-30 rounded-tr-[100px] p-4 outline-18 min-[1300px]:w-full min-[1300px]:max-w-72 min-[1300px]:pr-12 min-[1300px]:pl-8 lg:h-33.75 2xl:max-w-96 2xl:min-w-44'
-        >
-          <Link href='/' className='relative flex h-full w-full items-center justify-center'>
+        <div className='outline-foreground bg-primary relative h-28 min-w-30 rounded-tr-[100px] p-4 outline-18 min-[1300px]:w-full min-[1300px]:max-w-72 min-[1300px]:pr-12 min-[1300px]:pl-8 lg:h-33.75 2xl:max-w-96 2xl:min-w-44'>
+          <motion.a {...itemLeftMotion} href='/' className='relative flex h-full w-full items-center justify-center'>
             <Image
               src='/images/short-logo.png'
               alt='Profuture Logo'
@@ -48,8 +45,8 @@ export default function Header() {
               priority
               className='relative -ml-3 hidden h-12 w-36 object-contain min-[1300px]:flex lg:h-auto lg:w-full'
             />
-          </Link>
-        </motion.div>
+          </motion.a>
+        </div>
 
         <div className='flex w-full flex-col items-end px-4 min-[1300px]:px-0 min-[1310px]:items-start'>
           <div className='flex min-h-11 w-full items-center justify-end gap-2 min-[1300px]:pr-12 min-[1300px]:pl-5 lg:justify-between lg:gap-4'>

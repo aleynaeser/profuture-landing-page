@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { profutureData } from '@constants/profuture-data';
 import Header from '@shared/Header';
 import Footer from '@shared/Footer';
+import CookieConsent from '@shared/CookieConsent';
 import * as motion from 'motion/react-client';
 
 import '@styles/globals.css';
@@ -51,6 +52,7 @@ export default function RootLayout({
         {children}
 
         <Footer />
+        <CookieConsent />
       </motion.body>
     </html>
   );
