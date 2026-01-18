@@ -41,7 +41,7 @@ export default function CallForPapers() {
           </div>
         </motion.div>
 
-        <div className='relative h-full min-h-115 min-w-[300px]'>
+        <div className='relative h-full min-h-115 min-w-75'>
           <Image
             src='/images/call-cover-2.png'
             alt='Poster'

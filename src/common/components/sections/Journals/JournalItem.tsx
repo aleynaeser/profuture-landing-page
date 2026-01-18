@@ -13,7 +13,6 @@ import { itemMotion } from '@lib/motions';
 import { handleDownload } from '@lib/utils';
 import { IconButton } from '@/common/components/ui/Buttons/IconButton';
 import Badge from '../../ui/Badge';
-import { isNull } from 'util';
 
 interface IJournalItemProps {
   item: IJournal;

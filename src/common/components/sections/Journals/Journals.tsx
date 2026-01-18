@@ -11,6 +11,7 @@ import JournalItem from './JournalItem';
 import SlideButton from '@/common/components/ui/Buttons/SlideButton';
 import JournalModal from '@/common/components/ui/Modals/JournalModal';
 import NavigateButton from '@/common/components/ui/Buttons/NavigateButton';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 

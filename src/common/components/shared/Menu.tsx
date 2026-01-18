@@ -46,10 +46,10 @@ export default function Menu() {
                 <Image
                   src='/images/dark-logo.png'
                   alt='Profuture Logo'
-                  width={200}
-                  height={90}
+                  width={300}
+                  height={120}
                   priority
-                  className='relative h-auto w-auto object-contain'
+                  className='relative h-auto w-50 object-contain'
                 />
 
                 <IconButton
