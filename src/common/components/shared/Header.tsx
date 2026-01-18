@@ -8,17 +8,29 @@ import HomeIcon from '@icons/home.svg';
 import ContactIcon from '@icons/contact.svg';
 import SearchIcon from '@icons/search.svg';
 import PublicIcon from '@icons/public.svg';
+import { cn } from '@/common/lib/utils';
 import { menuData } from '@constants/menu-data';
 import { contactData } from '@constants/contact-data';
 import { profutureData } from '@constants/profuture-data';
-import { IconButton } from '@/common/components/ui/Buttons/IconButton';
+import { useActiveSection } from '@hooks/useActiveSection';
 import { itemLeftMotion, itemUpMotion } from '@lib/motions';
+import { IconButton } from '@/common/components/ui/Buttons/IconButton';
 
 export default function Header() {
+  const activeSection = useActiveSection();
   const { startYear, issn, periodicity } = profutureData;
   const {
     mail: { Icon, value, href },
   } = contactData;
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    
+    history.pushState(null, '', href);
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <motion.header
@@ -80,15 +92,19 @@ export default function Header() {
 
             <div className='flex items-center justify-center gap-6'>
               <nav className='flex items-center gap-6'>
-                {menuData.items.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className='text-secondary-dark hover:text-primary text-sm text-nowrap hover:underline 2xl:text-base'
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {menuData.items.map((item, index) => {
+                  const isActive = activeSection.activeSection === item.href.replace('#', '');
+                  return (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      onClick={(e) => handleScroll(e, item.href)}
+                      className={cn('text-secondary-dark hover:text-primary text-sm text-nowrap hover:underline 2xl:text-base', isActive && 'text-primary underline', isActive && 'text-primary underline')}
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                })}
               </nav>
 
               <div className='flex items-center justify-center gap-2'>

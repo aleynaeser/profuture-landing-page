@@ -2,16 +2,19 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { IconButton } from '../ui/Buttons/IconButton';
 import { menuData } from '@constants/menu-data';
+import { IconButton } from '../ui/Buttons/IconButton';
 import { AnimatePresence, motion } from 'motion/react';
+import { useActiveSection } from '@hooks/useActiveSection';
 import MenuIcon from '@icons/menu.svg';
 import CloseIcon from '@icons/close.svg';
 import ContactIcon from '@icons/contact.svg';
 import SearchIcon from '@icons/search.svg';
 import PublicIcon from '@icons/public.svg';
+import { cn } from '@/common/lib/utils';
 
 export default function Menu() {
+  const activeSection = useActiveSection();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -21,6 +24,16 @@ export default function Menu() {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    history.pushState(null, '', href);
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className='relative z-50 flex h-full items-center justify-center lg:hidden lg:px-4 lg:pr-12'>
@@ -62,19 +75,26 @@ export default function Menu() {
 
               <div className='flex h-full flex-col justify-around'>
                 <nav className='flex flex-col items-center justify-center gap-7'>
-                  {menuData.items.map((item, index) => (
-                    <motion.a
-                      key={index}
-                      href={item.href}
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ duration: 0.15, stiffness: 100, damping: 10 }}
-                      onClick={() => setIsOpen(false)}
-                      className='text-primary-darker p-2 text-center text-2xl/relaxed hover:underline sm:text-3xl lg:p-4'
-                    >
-                      <span>{item.label}</span>
-                    </motion.a>
-                  ))}
+                  {menuData.items.map((item, index) => {
+                    const isActive = activeSection.activeSection === item.href.replace('#', '');
+                    
+                    return (
+                      <motion.a
+                        key={index}
+                        href={item.href}
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.15, stiffness: 100, damping: 10 }}
+                        onClick={(e) => handleScroll(e, item.href)}
+                        className={cn(
+                          'text-primary-darker p-2 text-center text-2xl/relaxed hover:underline sm:text-3xl lg:p-4',
+                          isActive && 'text-primary underline',
+                        )}
+                      >
+                        <span>{item.label}</span>
+                      </motion.a>
+                    );
+                  })}
                 </nav>
 
                 <div className='flex items-center justify-center gap-4'>

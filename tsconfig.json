@@ -24,19 +24,13 @@
       "@icons/*": ["./src/assets/icons/*"],
       "@types/*": ["./src/common/types/*"],
       "@styles/*": ["./src/common/styles/*"],
+      "@hooks/*": ["./src/common/hooks/*"],
       "@constants/*": ["./src/common/constants/*"],
       "@components/*": ["./src/common/components/*"],
       "@shared/*": ["./src/common/components/shared/*"],
       "@sections/*": ["./src/common/components/sections/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts", "**/*.mts"],
   "exclude": ["node_modules"]
 }

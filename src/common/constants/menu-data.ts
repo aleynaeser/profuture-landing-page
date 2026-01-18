@@ -2,23 +2,23 @@ export const menuData: IMenu = {
   items: [
     {
       label: 'Amaç ve Kapsam',
-      href: '/',
+      href: '#about-journal',
     },
     {
       label: 'Etik İlkeler ve Yayın Politikası',
-      href: '/',
+      href: '#journals',
     },
     {
       label: 'Makale Çağrıları',
-      href: '/',
+      href: '#call-for-papers',
     },
     {
       label: 'Sayılar',
-      href: '/',
+      href: '#current-articles',
     },
     {
       label: 'İletişim',
-      href: '/',
+      href: '#contact',
     },
   ],
 };
