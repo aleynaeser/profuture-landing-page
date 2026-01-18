@@ -14,7 +14,7 @@ import PublicIcon from '@icons/public.svg';
 import { cn } from '@/common/lib/utils';
 
 export default function Menu() {
-  const activeSection = useActiveSection();
+  const { activeSection, scrollToSection } = useActiveSection();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -25,14 +25,9 @@ export default function Menu() {
     };
   }, [isOpen]);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-    e.preventDefault();
+  const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     setIsOpen(false);
-
-    history.pushState(null, '', href);
-    const targetId = href.replace('#', '');
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(e, href);
   };
 
   return (
@@ -76,7 +71,7 @@ export default function Menu() {
               <div className='flex h-full flex-col justify-around'>
                 <nav className='flex flex-col items-center justify-center gap-7'>
                   {menuData.items.map((item, index) => {
-                    const isActive = activeSection.activeSection === item.href.replace('#', '');
+                    const isActive = activeSection === item.href.replace('#', '');
                     
                     return (
                       <motion.a
@@ -85,7 +80,7 @@ export default function Menu() {
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.15, stiffness: 100, damping: 10 }}
-                        onClick={(e) => handleScroll(e, item.href)}
+                        onClick={(e) => handleMenuClick(e, item.href)}
                         className={cn(
                           'text-primary-darker p-2 text-center text-2xl/relaxed hover:underline sm:text-3xl lg:p-4',
                           isActive && 'text-primary underline',
