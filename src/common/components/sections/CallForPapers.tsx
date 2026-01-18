@@ -11,7 +11,7 @@ export default function CallForPapers() {
     <section id='call-for-papers' className='mt-12 w-full px-4 lg:container lg:mx-auto lg:mt-20 xl:mt-40'>
       <div className='relative flex h-full max-h-full min-h-110 w-full flex-col items-center justify-between rounded-3xl bg-[url("/images/call-background.png")] bg-cover bg-center bg-no-repeat lg:flex-row lg:items-stretch lg:gap-8 lg:rounded-4xl'>
         <Image
-          src='/images/call-cover-1.png'
+          src='/images/call-cover1.png'
           alt='Covers'
           width={440}
           height={600}
@@ -43,7 +43,7 @@ export default function CallForPapers() {
 
         <div className='relative h-full min-h-115 min-w-75'>
           <Image
-            src='/images/call-cover-2.png'
+            src='/images/call-cover2.png'
             alt='Poster'
             fill
             sizes='(max-width: 1024px) 100vw, 33vw'
