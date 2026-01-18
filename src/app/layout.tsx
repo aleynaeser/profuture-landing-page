@@ -44,7 +44,7 @@ export default function RootLayout({
           duration: 0.5,
           scale: { type: 'spring', visualDuration: 0.5, bounce: 0.5 },
         }}
-        className={`${inter.variable} flex flex-col antialiased h-screen`}
+        className={`${inter.variable} relative flex min-h-screen flex-col antialiased`}
       >
         <Header />
 

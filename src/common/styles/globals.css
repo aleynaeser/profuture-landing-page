@@ -9,19 +9,19 @@
   --primary-dark: #081542;
   --primary-darker: #112053;
 
-  --secondary: #DAEFFF;
+  --secondary: #daefff;
   --secondary-light: #00c3d0;
   --secondary-lighter: #f6f8ff;
   --secondary-dark: #2a2c31;
 
-  --neutral: #F5F7FF;
-  --neutral-light: #E7EAF5;
+  --neutral: #f5f7ff;
+  --neutral-light: #e7eaf5;
   --neutral-lighter: #f0f0f3;
-  --neutral-dark: #E9F4F8;
+  --neutral-dark: #e9f4f8;
 
   --accent: #db0d15;
   --accent-light: #ffd9da;
-  --accent-dark: #de8536;
+  --accent-lighter: #a8b95e;
 
   --stroke: #acb1c6;
 }
@@ -46,6 +46,7 @@
 
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
+  --color-accent-lighter: var(--accent-lighter);
 
   --color-stroke: var(--stroke);
 

@@ -14,9 +14,7 @@ interface IArticleModalProps {
 
 export default function ArticleModal({ article, onClose }: IArticleModalProps) {
   useEffect(() => {
-    if (article) {
-      document.body.style.overflow = 'hidden';
-    }
+    if (article) document.body.style.overflow = 'hidden';
 
     return () => {
       document.body.style.overflow = 'unset';
@@ -32,7 +30,7 @@ export default function ArticleModal({ article, onClose }: IArticleModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className='fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/10'
+          className='fixed inset-0 z-50 flex items-center justify-center bg-black/10 backdrop-blur-lg'
         >
           <motion.div
             initial={{ opacity: 0, y: 50 }}

@@ -13,6 +13,7 @@ import { itemMotion } from '@lib/motions';
 import { handleDownload } from '@lib/utils';
 import { IconButton } from '@components/ui/IconButton';
 import Badge from '../../ui/Badge';
+import { isNull } from 'util';
 
 interface IJournalItemProps {
   item: IJournal;
@@ -23,10 +24,16 @@ export default function JournalItem({ item, onView }: IJournalItemProps) {
   return (
     <motion.div
       {...itemMotion}
-      className='bg-foreground border-neutal-dark flex min-h-80 w-116.5 gap-4 rounded-[20px] border p-4 shadow-sm'
+      className='bg-foreground border-neutal-dark flex min-h-80 gap-4 rounded-[20px] border p-4 shadow-sm'
     >
       <div className='relative h-70 w-60'>
-        <Image src={item.cover} alt={item.title} fill />
+        <Image src={item.cover} alt={item.title} fill sizes='240px' />
+
+        {item.isNew && (
+          <div className='bg-accent absolute top-1/2 -left-11 z-20 h-10 w-fit -translate-y-1/2 -rotate-90 transform rounded-br-3xl rounded-bl-3xl lg:rounded-br-4xl lg:rounded-bl-4xl px-4 py-2 text-sm font-bold lg:-left-12 lg:h-12 lg:px-4.5 lg:py-2 lg:text-lg'>
+            Son Sayı
+          </div>
+        )}
       </div>
 
       <div className='flex flex-col items-end justify-between'>
@@ -59,13 +66,8 @@ export default function JournalItem({ item, onView }: IJournalItemProps) {
 
         <div className='mt-3 flex items-center gap-2'>
           <IconButton onClick={() => onView(item)} Icon={EyeIcon} variant='outline' className='bg-primary' />
-          <IconButton onClick={() => onView(item)} Icon={DownloadIcon} variant='outline' />
-          <IconButton
-            onClick={() => handleDownload(item)}
-            variant='outline'
-            className='text-secondary-dark'
-            Icon={RightIcon}
-          />
+          <IconButton onClick={() => handleDownload(item)} Icon={DownloadIcon} variant='outline' />
+          <IconButton onClick={() => onView(item)} variant='outline' className='text-secondary-dark' Icon={RightIcon} />
         </div>
       </div>
     </motion.div>

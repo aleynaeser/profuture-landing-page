@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'motion/react';
 import InboxIcon from '@icons/inbox.svg';
 import { IconButton } from '../ui/IconButton';
 import { contactData } from '@constants/contact-data';
+import { itemLeftMotion, itemUpMotion } from '@/common/lib/motions';
 
 export default function Footer() {
   const { editorsMail, mail, address } = contactData;
@@ -12,7 +14,7 @@ export default function Footer() {
     <footer className='bg-primary-darker text-foreground w-full'>
       <div className='px-4 lg:container lg:mx-auto'>
         <div className='xs:items-center flex flex-col justify-between gap-4 py-8 sm:flex-row sm:flex-wrap lg:pt-15 lg:pb-10'>
-          <div className='flex items-center gap-4'>
+          <motion.div {...itemLeftMotion} className='flex items-center gap-4'>
             <IconButton variant='outline' href={editorsMail.href} Icon={editorsMail.Icon} />
 
             <div className='flex flex-col gap-0.5'>
@@ -23,9 +25,9 @@ export default function Footer() {
                 {editorsMail.value}
               </Link>
             </div>
-          </div>
+          </motion.div>
 
-          <div className='flex items-center gap-4'>
+          <motion.div {...itemLeftMotion} className='flex items-center gap-4'>
             <IconButton variant='outline' href={mail.href} Icon={mail.Icon} />
 
             <div className='flex flex-col gap-0.5'>
@@ -34,27 +36,30 @@ export default function Footer() {
                 {mail.value}
               </Link>
             </div>
-          </div>
+          </motion.div>
 
-          <div className='flex items-center gap-4'>
+          <motion.div {...itemLeftMotion} className='flex items-center gap-4'>
             <IconButton variant='outline' href={address.href} Icon={address.Icon} />
             <p className='max-w-[calc(100%-74px)] text-sm md:max-w-75 2xl:text-base'>{address.value}</p>
-          </div>
+          </motion.div>
         </div>
 
         <div className='bg-stroke/91 h-[0.5px]' />
 
-        <p className='py-4 text-center text-[8px] leading-relaxed font-light italic md:py-8 md:text-sm'>
+        <motion.p
+          {...itemUpMotion}
+          className='py-4 text-center text-[8px] leading-relaxed font-light italic md:py-8 md:text-sm'
+        >
           Bu sitede yer alan tüm yazılı, görsel ve uygulama içerikleri kaynak gösterilmeden kullanılamaz. Site içerisinde
           sunulan bilgiler yalnızca bilgilendirme amacıyla hazırlanmış olup, bu bilgilerin kullanımından doğabilecek her
           türlü sorumluluk kullanıcıya aittir. Siteye erişim sağlayan kullanıcılar, bu şartları okumuş, anlamış ve kabul
           etmiş sayılır.
-        </p>
+        </motion.p>
       </div>
 
-      <p className='bg-accent py-2 text-center text-xs md:text-sm'>
+      <motion.p {...itemUpMotion} className='bg-accent py-2 text-center text-xs md:text-sm'>
         Profuture Teknoloji - Tüm Hakları Saklıdır. © {new Date().getFullYear()}
-      </p>
+      </motion.p>
     </footer>
   );
 }

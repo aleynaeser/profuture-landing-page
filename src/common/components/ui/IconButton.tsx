@@ -25,7 +25,7 @@ export const IconButton = ({ className, variant = 'solid', content, href = '/', 
     'group relative flex cursor-pointer items-center justify-center  overflow-hidden rounded-full font-medium',
     isOutlined
       ? 'border-stroke h-13.75 w-13.75 border bg-transparent '
-      : 'h-13.75 w-13.75 min-[1300px]:min-w-37.5 text-nowrap px-4 text-white text-sm 2xl:text-base',
+      : 'h-13.75 w-13.75 min-[1300px]:w-fit min-[1300px]:min-w-37.5  text-nowrap px-4 text-white text-sm 2xl:text-base',
     className,
   );
 

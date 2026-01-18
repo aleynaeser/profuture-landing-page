@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <motion.header
       {...itemUpMotion}
-      className='bg-foreground before:bg-primary-darker relative z-40 flex h-full w-full flex-col before:absolute before:top-0 before:left-0 before:-z-1 before:h-11 before:w-full lg:h-33.75'
+      className='bg-foreground before:bg-primary-darker sticky top-0 right-0 z-40 flex h-full w-full flex-col before:absolute before:top-0 before:left-0 before:-z-1 before:h-11 before:w-full lg:h-33.75'
     >
       <div className='relative flex w-full overflow-hidden'>
         <motion.div
@@ -96,8 +96,8 @@ export default function Header() {
 
               <div className='flex items-center justify-center gap-2'>
                 <IconButton content='Dergi Kurulu' Icon={PublicIcon} className='bg-primary' />
-                <IconButton content='Yazar Rehberi' Icon={ContactIcon} className='bg-neutral' />
-                <IconButton variant='outline' Icon={SearchIcon} />
+                <IconButton content='Yazar Rehberi' Icon={ContactIcon} className='bg-accent-lighter' />
+                <IconButton variant='outline' Icon={SearchIcon}  />
               </div>
             </div>
           </div>
@@ -128,6 +128,7 @@ export default function Header() {
           Periyot: <span className='font-bold'>{periodicity}</span>
         </span>
       </div>
+  
     </motion.header>
   );
 }

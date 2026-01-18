@@ -6,7 +6,6 @@ export const journalData: IJournal[] = [
     volume: 1,
     issue: 1,
     date: 'Aralık 2022',
-    isNew: true,
   },
   {
     id: 'profuture-02',
@@ -15,7 +14,6 @@ export const journalData: IJournal[] = [
     volume: 1,
     issue: 1,
     date: 'Haziran 2022',
-    isNew: false,
   },
   {
     id: 'profuture-03',
@@ -24,15 +22,6 @@ export const journalData: IJournal[] = [
     volume: 1,
     issue: 1,
     date: 'Temmuz 2022',
-    isNew: true,
-  },
-  {
-    id: 'profuture-04',
-    title: 'Teknoloji ve Dijital Dergisi',
-    cover: '/images/journal-cover.png',
-    volume: 1,
-    issue: 1,
-    date: 'Ağustos 2022',
     isNew: true,
   },
 ];

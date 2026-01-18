@@ -1,5 +1,5 @@
 const itemUpVariants: TMotionVariant = {
-  initial: { y: 10, opacity: 0 },
+  initial: { y: 14, opacity: 0 },
   whileInView: {
     y: 0,
     opacity: 1,
@@ -8,7 +8,7 @@ const itemUpVariants: TMotionVariant = {
 };
 
 const itemLeftVariants: TMotionVariant = {
-  initial: { x: 10, opacity: 0 },
+  initial: { x: 14, opacity: 0 },
   whileInView: {
     x: 0,
     opacity: 1,
@@ -19,14 +19,14 @@ const itemLeftVariants: TMotionVariant = {
 export const itemUpMotion = {
   initial: 'initial',
   whileInView: 'whileInView',
-  viewport: { once: true, amount: 0 },
+  viewport: { once: true },
   variants: itemUpVariants,
 };
 
 export const itemLeftMotion = {
   initial: 'initial',
   whileInView: 'whileInView',
-  viewport: { once: true, amount: 0 },
+  viewport: { once: true },
   variants: itemLeftVariants,
 };
 
@@ -61,14 +61,14 @@ export const itemMotion = {
   whileInView: 'whileInView',
   whileHover: 'whileHover',
   variants: itemVariants,
-  viewport: { once: true, amount: 0 },
+  viewport: { once: true },
 };
 
 export const itemListMotion = {
   initial: 'initial',
   whileInView: 'whileInView',
   variants: itemListVariants,
-  viewport: { once: true, amount: 0 },
+  viewport: { once: true },
 };
 
 const floatingVariants: TMotionVariant = {
@@ -89,6 +89,3 @@ export const floatingMotion = {
   animate: 'animate',
   variants: floatingVariants,
 };
-
- 
- 

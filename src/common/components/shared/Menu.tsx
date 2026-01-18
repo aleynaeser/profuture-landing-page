@@ -15,9 +15,7 @@ export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    }
+    if (isOpen) document.body.style.overflow = 'hidden';
 
     return () => {
       document.body.style.overflow = 'unset';
@@ -51,7 +49,7 @@ export default function Menu() {
                   width={200}
                   height={90}
                   priority
-                  className='relative h-auto object-contain'
+                  className='relative h-auto w-auto object-contain'
                 />
 
                 <IconButton
@@ -81,7 +79,7 @@ export default function Menu() {
 
                 <div className='flex items-center justify-center gap-4'>
                   <IconButton content='Dergi Kurulu' Icon={PublicIcon} className='bg-primary' />
-                  <IconButton content='Yazar Rehberi' Icon={ContactIcon} className='bg-neutral' />
+                  <IconButton content='Yazar Rehberi' Icon={ContactIcon} className='bg-accent-lighter' />
                   <IconButton variant='outline' Icon={SearchIcon} />
                 </div>
               </div>

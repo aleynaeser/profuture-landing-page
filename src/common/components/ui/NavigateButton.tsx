@@ -24,7 +24,6 @@ export default function NavigateButton({ content, href = '/', className = '', va
       className={cn(
         'relative flex h-13.75 items-center gap-3 overflow-hidden rounded-full px-5 py-2',
         isOutline ? 'bg-background text-secondary-dark border-stroke hover:border-primary border' : 'bg-primary',
-
         className,
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -39,17 +38,13 @@ export default function NavigateButton({ content, href = '/', className = '', va
         <RightIcon className={cn(isOutline ? 'text-secondary-dark' : 'text-white')} />
       </motion.span>
 
-      <motion.div
-        initial={{ x: 0 }}
-        animate={isHovered ? { x: 33 } : { x: 0 }}
-        transition={{ type: 'spring', stiffness: 130, duration: 0.3, damping: 10 }}
-      >
+      <motion.div initial={{ x: 0 }} animate={isHovered ? { x: 33 } : { x: 0 }} transition={{ duration: 0.3 }}>
         {content}
       </motion.div>
 
       <motion.span
         initial={{ x: -18, opacity: 1, scale: 1 }}
-        animate={isHovered ? { x: 12, opacity: 0, scale: 1.02 } : { x: -18, opacity: 1, scale: 1 }}
+        animate={isHovered ? { x: 20, opacity: 0, scale: 1.02 } : { x: -18, opacity: 1, scale: 1 }}
         transition={{ type: 'spring', stiffness: 130, duration: 0.3, damping: 10 }}
         className='absolute right-0'
       >

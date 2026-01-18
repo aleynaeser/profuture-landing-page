@@ -1,16 +1,27 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'motion/react';
 import CallIcon from '@icons/call.svg';
+import { itemUpMotion } from '@lib/motions';
 import NavigateButton from '@components/ui/NavigateButton';
 
 export default function CallForPapers() {
   return (
-    <section id='call-for-papers' className='mt-12 w-full px-4 lg:container lg:mx-auto lg:mt-40'>
-      <div className='relative flex h-full min-h-110 w-full flex-col items-center justify-between rounded-3xl bg-[url("/images/call-background.png")] bg-cover bg-center bg-no-repeat lg:flex-row lg:items-start lg:gap-8 lg:rounded-4xl'>
-        <div className='relative mt-4 h-96 w-full max-w-96 lg:mt-0 lg:h-full'>
-          <Image src='/images/call-cover-1.png' alt='Covers' fill className='absolute right-0' />
-        </div>
+    <section id='call-for-papers' className='mt-12 w-full px-4 lg:container lg:mx-auto lg:mt-20 xl:mt-40'>
+      <div className='relative flex h-full max-h-full min-h-110 w-full flex-col items-center justify-between rounded-3xl bg-[url("/images/call-background.png")] bg-cover bg-center bg-no-repeat lg:flex-row lg:items-stretch lg:gap-8 lg:rounded-4xl'>
+        <Image
+          src='/images/call-cover-1.png'
+          alt='Covers'
+          width={440}
+          height={600}
+          className='w-full max-w-100 pt-4 lg:pt-0'
+        />
 
-        <div className='relative z-10 flex w-full max-w-150 flex-col items-center gap-7.5 px-4 py-6 text-center lg:-ml-16 lg:pr-15 lg:pl-2'>
+        <motion.div
+          {...itemUpMotion}
+          className='relative z-10 flex w-full max-w-150 flex-col items-center gap-7.5 px-4 py-6 text-center lg:-ml-14 lg:pr-15 lg:pb-14 lg:pl-2'
+        >
           <div className='flex flex-col items-center gap-2'>
             <CallIcon />
             <h4 className='text-primary-light text-lg font-medium 2xl:text-xl'>Makale Çağrısı</h4>
@@ -28,10 +39,16 @@ export default function CallForPapers() {
           <div className='flex items-center justify-center'>
             <NavigateButton content='Makale Gönder' variant='solid' className='bg-accent w-50' />
           </div>
-        </div>
+        </motion.div>
 
-        <div className='relative h-96 w-full max-w-62 lg:h-full lg:scale-110'>
-          <Image src='/images/call-cover-2.png' alt='Poster' fill className='absolute lg:-mt-5 lg:-ml-14' />
+        <div className='relative h-full min-h-115 min-w-[300px]'>
+          <Image
+            src='/images/call-cover-2.png'
+            alt='Poster'
+            fill
+            sizes='(max-width: 1024px) 100vw, 33vw'
+            className='absolute -top-10 -left-5 h-full w-full lg:-top-10! lg:-left-10!'
+          />
         </div>
       </div>
     </section>
