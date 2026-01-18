@@ -26,11 +26,11 @@ export default function CurrentArticleItem({ article, onView, onDownload }: ICur
         <Badge content={article.type} />
       </div>
 
-      <div className='flex flex-col lg:flex-row items-center lg:items-start justify-between gap-2'>
+      <div className='flex flex-col lg:flex-row h-full items-center lg:items-start justify-between gap-2'>
         <div className='flex flex-col gap-2.5 items-start w-full'>
           <div className='flex items-center justify-center gap-2'>
             <PDFIcon />
-            <h4 className='text-secondary-dark w-[calc(100%-30px)] lg:line-clamp-1 text-lg font-bold'>{article.title}</h4>
+            <h4 className='text-secondary-dark w-[calc(100%-20px)] lg:line-clamp-1 text-lg font-bold'>{article.title}</h4>
           </div>
 
           <div className='flex flex-col lg:flex-row gap-4'>
@@ -49,7 +49,7 @@ export default function CurrentArticleItem({ article, onView, onDownload }: ICur
                 <AuthorIcon />
               </div>
 
-              <div className='text-secondary-dark w-[calc(100%-36px)] text-sm'>{article.authors?.join(', ')}</div>
+              <div className='text-secondary-dark w-[calc(100%-36px)] text-sm sm:line-clamp-1'>{article.authors?.join(', ')}</div>
             </div>
           </div>
         </div>

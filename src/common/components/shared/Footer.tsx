@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className='bg-primary-darker text-foreground w-full'>
-      <div className='px-4 lg:container lg:mx-auto lg:px-0'>
+      <div className='px-4 lg:container lg:mx-auto'>
         <div className='xs:items-center flex flex-col justify-between gap-4 py-8 sm:flex-row sm:flex-wrap lg:pt-15 lg:pb-10'>
           <div className='flex items-center gap-4'>
             <IconButton variant='outline' href={editorsMail.href} Icon={editorsMail.Icon} />

@@ -1,34 +1,37 @@
-import React from 'react';
 import Image from 'next/image';
+import CallIcon from '@icons/call.svg';
 import NavigateButton from '@components/ui/NavigateButton';
 
 export default function CallForPapers() {
   return (
-    <section id='call-for-papers' className='my-12 w-full px-4 lg:container lg:mx-auto lg:my-40 lg:px-0'>
-      <div className='relative overflow-hidden rounded-3xl bg-secondary-lighter p-6'>
-        <Image src='/images/call-background.png' alt='Call background' width={1600} height={420} className='absolute inset-0 -z-10 h-full w-full object-cover' />
+    <section id='call-for-papers' className='mt-12 w-full px-4 lg:container lg:mx-auto lg:mt-40'>
+      <div className='relative flex h-full min-h-110 w-full flex-col items-center justify-between rounded-3xl bg-[url("/images/call-background.png")] bg-cover bg-center bg-no-repeat lg:flex-row lg:items-start lg:gap-8 lg:rounded-4xl'>
+        <div className='relative mt-4 h-96 w-full max-w-96 lg:mt-0 lg:h-full'>
+          <Image src='/images/call-cover-1.png' alt='Covers' fill className='absolute right-0' />
+        </div>
 
-        <div className='relative z-10 flex flex-col items-center gap-6 lg:flex-row lg:items-center'>
-          <div className='hidden lg:block lg:w-1/3 lg:pl-6'>
-            <Image src='/images/call-cover-1.png' alt='Covers' width={420} height={360} className='object-contain' />
+        <div className='relative z-10 flex w-full max-w-150 flex-col items-center gap-7.5 px-4 py-6 text-center lg:-ml-16 lg:pr-15 lg:pl-2'>
+          <div className='flex flex-col items-center gap-2'>
+            <CallIcon />
+            <h4 className='text-primary-light text-lg font-medium 2xl:text-xl'>Makale Çağrısı</h4>
+            <h2 className='text-primary text-2xl/relaxed font-bold 2xl:text-[28px]'>
+              Türkiye Ulusal Dijital Veri ve Altyapıları
+            </h2>
           </div>
 
-          <div className='w-full lg:w-1/3 px-2 text-center lg:text-left'>
-            <h4 className='text-secondary-dark text-lg font-medium'>Makale Çağrısı</h4>
-            <h2 className='text-primary text-3xl font-bold'>Türkiye Ulusal Dijital Veri ve Altyapıları</h2>
+          <p className='text-secondary-dark text-sm/relaxed 2xl:text-lg/relaxed'>
+            Bu dosya kapsamında; ulusal ölçekte dijital veri yönetimi, kamu ve özel sektörde teknoloji altyapıları, yapay
+            zeka uygulamaları, büyük veri analitiği, siber güvenlik, akıllı sistemler ve dijital dönüşüm odaklı özgün, güncel
+            ve disiplinlerarası akademik çalışmalar değerlendirilecektir.
+          </p>
 
-            <p className='mt-4 text-secondary-dark'>
-              Bu dosya kapsamında; ulusal ölçekte dijital veri yönetimi, kamu ve özel sektörde teknoloji altyapıları, yapay zeka uygulamaları, büyük veri analitiği, siber güvenlik, akıllı sistemler ve dijital dönüşüm odaklı özgün, güncel ve disiplinlerarası akademik çalışmalar değerlendirilecektir.
-            </p>
-
-            <div className='mt-6 flex justify-center lg:justify-start'>
-              <NavigateButton content='Makale Gönder' href='/' variant='solid' className='bg-accent' />
-            </div>
+          <div className='flex items-center justify-center'>
+            <NavigateButton content='Makale Gönder' variant='solid' className='bg-accent' />
           </div>
+        </div>
 
-          <div className='hidden lg:block lg:w-1/3 lg:pr-6'>
-            <Image src='/images/call-cover-2.png' alt='Poster' width={320} height={480} className='object-contain rounded-2xl shadow-lg' />
-          </div>
+        <div className='relative h-96 w-full max-w-62 lg:h-full lg:scale-110'>
+          <Image src='/images/call-cover-2.png' alt='Poster' fill className='absolute lg:-mt-5 lg:-ml-14' />
         </div>
       </div>
     </section>
