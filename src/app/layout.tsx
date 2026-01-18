@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { journalData } from '@constants/journal-data';
+import { profutureData } from '@constants/profuture-data';
 import Header from '@shared/Header';
 import Footer from '@shared/Footer';
 import * as motion from 'motion/react-client';
@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: journalData.title,
-  description: journalData.description,
+  title: profutureData.title,
+  description: profutureData.description,
 };
 
 export default function RootLayout({

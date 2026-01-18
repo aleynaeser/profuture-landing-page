@@ -10,12 +10,12 @@ import SearchIcon from '@icons/search.svg';
 import PublicIcon from '@icons/public.svg';
 import { menuData } from '@constants/menu-data';
 import { contactData } from '@constants/contact-data';
-import { journalData } from '@constants/journal-data';
+import { profutureData } from '@constants/profuture-data';
 import { IconButton } from '@components/ui/IconButton';
 import { itemLeftMotion, itemUpMotion } from '@lib/motions';
 
 export default function Header() {
-  const { startYear, issn, periodicity } = journalData;
+  const { startYear, issn, periodicity } = profutureData;
   const {
     mail: { Icon, value, href },
   } = contactData;

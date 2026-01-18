@@ -26,7 +26,7 @@ export default function CallForPapers() {
           </p>
 
           <div className='flex items-center justify-center'>
-            <NavigateButton content='Makale Gönder' variant='solid' className='bg-accent' />
+            <NavigateButton content='Makale Gönder' variant='solid' className='bg-accent w-50' />
           </div>
         </div>
 

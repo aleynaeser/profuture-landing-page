@@ -22,7 +22,7 @@ export default function AboutJournal() {
         </p>
 
         <div className='mt-12 max-w-52'>
-          <NavigateButton content='Detay' />
+          <NavigateButton content='Detay' className='w-37.5'/>
         </div>
       </div>
 

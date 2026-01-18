@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { handleDownload } from '@lib/utils';
 import { itemListMotion } from '@/common/lib/motions';
 import { IconButton } from '@components/ui/IconButton';
 import { useCallback, useMemo, useState } from 'react';
@@ -22,19 +23,6 @@ export default function CurrentArticles() {
   const handleView = useCallback((a: IArticle) => {
     setSelectedArticle(a);
   }, []);
-
-  const handleDownload = (a: IArticle) => {
-    const blob = new Blob([a.content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const aEl = document.createElement('a');
-    const safeName = a.title.replace(/[^a-z0-9ğüşöçİĞÜŞÖÇ\s-]/gi, '').replace(/\s+/g, '_');
-    aEl.href = url;
-    aEl.download = `${safeName || a.id}.txt`;
-    document.body.appendChild(aEl);
-    aEl.click();
-    aEl.remove();
-    URL.revokeObjectURL(url);
-  };
 
   return (
     <section id='current-articles' className='my-12 w-full px-4 lg:container lg:mx-auto lg:my-40'>
@@ -74,12 +62,12 @@ export default function CurrentArticles() {
               <h2 className='text-accent text-2xl/relaxed font-bold 2xl:text-[28px]'>Güncel Yazılar</h2>
             </div>
 
-            <NavigateButton content='Tümünü Görüntüle' href='/' variant='outline' />
+            <NavigateButton content='Tümünü Görüntüle' variant='outline' className='w-55' />
           </div>
 
           <motion.div {...itemListMotion} className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-1'>
             {articlesData.map((a) => (
-              <CurrentArticleItem key={a.id} article={a} onView={handleView} onDownload={handleDownload} />
+              <CurrentArticleItem key={a.id} article={a} onView={handleView} />
             ))}
           </motion.div>
         </div>

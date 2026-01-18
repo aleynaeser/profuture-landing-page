@@ -1,12 +1,22 @@
 export declare global {
   type TIconProps = React.SVGProps<SVGSVGElement>;
 
-  interface IJournal {
+  interface IProfuture {
     title: string;
     description: string;
     startYear: number;
     issn: string;
     periodicity: string;
+  }
+
+  interface IJournal {
+    id: string;
+    title: string;
+    cover: string;
+    volume: number;
+    issue: number;
+    date: string;
+    isNew?: boolean;
   }
 
   type TMotionVariant = {

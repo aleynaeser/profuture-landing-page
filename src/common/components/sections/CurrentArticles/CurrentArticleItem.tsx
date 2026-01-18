@@ -6,16 +6,16 @@ import Badge from '@components/ui/Badge';
 import AuthorIcon from '@icons/author.svg';
 import DownloadIcon from '@icons/download.svg';
 import { motion } from 'framer-motion';
-import { itemMotion } from '@/common/lib/motions';
+import { itemMotion } from '@lib/motions';
+import { handleDownload } from '@lib/utils';
 import { IconButton } from '@components/ui/IconButton';
 
 interface ICurrentArticleItemProps {
   article: IArticle;
   onView: (a: IArticle) => void;
-  onDownload: (a: IArticle) => void;
 }
 
-export default function CurrentArticleItem({ article, onView, onDownload }: ICurrentArticleItemProps) {
+export default function CurrentArticleItem({ article, onView }: ICurrentArticleItemProps) {
   return (
     <motion.div
       {...itemMotion}
@@ -26,14 +26,14 @@ export default function CurrentArticleItem({ article, onView, onDownload }: ICur
         <Badge content={article.type} />
       </div>
 
-      <div className='flex flex-col lg:flex-row h-full items-center lg:items-start justify-between gap-2'>
-        <div className='flex flex-col gap-2.5 items-start w-full'>
+      <div className='flex h-full flex-col items-center justify-between gap-2 lg:flex-row lg:items-start'>
+        <div className='flex w-full flex-col items-start gap-2.5'>
           <div className='flex items-center justify-center gap-2'>
             <PDFIcon />
-            <h4 className='text-secondary-dark w-[calc(100%-20px)] lg:line-clamp-1 text-lg font-bold'>{article.title}</h4>
+            <h4 className='text-secondary-dark w-[calc(100%-20px)] text-lg font-bold lg:line-clamp-1'>{article.title}</h4>
           </div>
 
-          <div className='flex flex-col lg:flex-row gap-4'>
+          <div className='flex flex-col gap-4 lg:flex-row'>
             <div className='flex items-center gap-2'>
               <div className='bg-neutral-lighter flex h-7 w-7 items-center justify-center rounded-full'>
                 <PageIcon />
@@ -49,14 +49,16 @@ export default function CurrentArticleItem({ article, onView, onDownload }: ICur
                 <AuthorIcon />
               </div>
 
-              <div className='text-secondary-dark w-[calc(100%-36px)] text-sm sm:line-clamp-1'>{article.authors?.join(', ')}</div>
+              <div className='text-secondary-dark w-[calc(100%-36px)] text-sm sm:line-clamp-1'>
+                {article.authors?.join(', ')}
+              </div>
             </div>
           </div>
         </div>
 
         <div className='flex items-center gap-1.5'>
           <IconButton href='mailto:profuture@gmail.com' variant='outline' Icon={SendIcon} />
-          <IconButton onClick={() => onDownload(article)} variant='outline' Icon={DownloadIcon} />
+          <IconButton onClick={() => handleDownload(article)} variant='outline' Icon={DownloadIcon} />
           <IconButton onClick={() => onView(article)} Icon={EyeIcon} className='bg-primary' content='Görüntüle' />
         </div>
       </div>

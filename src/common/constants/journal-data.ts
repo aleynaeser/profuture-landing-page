@@ -1,7 +1,38 @@
-export const journalData: IJournal = {
-  title: 'Profuture',
-  description: '2022 yılında yayın hayatına başlayan teknoloji dergisi Profuture',
-  startYear: 2025,
-  issn: '345-255',
-  periodicity: 'Yılda 2 Sayı',
-};
+export const journalData: IJournal[] = [
+  {
+    id: 'profuture-01',
+    title: 'Teknoloji ve Dijital Dergisi',
+    cover: '/images/journal-cover.png',
+    volume: 1,
+    issue: 1,
+    date: 'Aralık 2022',
+    isNew: true,
+  },
+  {
+    id: 'profuture-02',
+    title: 'Teknoloji ve Dijital Dergisi',
+    cover: '/images/journal-cover.png',
+    volume: 1,
+    issue: 1,
+    date: 'Haziran 2022',
+    isNew: false,
+  },
+  {
+    id: 'profuture-03',
+    title: 'Teknoloji ve Dijital Dergisi',
+    cover: '/images/journal-cover.png',
+    volume: 1,
+    issue: 1,
+    date: 'Temmuz 2022',
+    isNew: true,
+  },
+  {
+    id: 'profuture-04',
+    title: 'Teknoloji ve Dijital Dergisi',
+    cover: '/images/journal-cover.png',
+    volume: 1,
+    issue: 1,
+    date: 'Ağustos 2022',
+    isNew: true,
+  },
+];
